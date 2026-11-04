@@ -131,7 +131,7 @@ An Isolation Forest model ($n=200$, contamination $= 0.01$) detects multivariate
 Gradient Boosted Decision Trees trained with histogram-based binning, early stopping on validation loss, and Optuna Bayesian optimization:
 - Model v1: Baseline 24h-ahead regressor (29 features).
 - Model v2: Cross-station lags and $\log(1 + y)$ target transformation.
-- Model v3 + Tuned: 46 expanded features with tree regularizers ($\lambda_{L2} = 0.1306$, $\alpha_{L1} = 0.1225$, $\text{num\_leaves} = 18$).
+- Model v3 + Tuned: 46 expanded features with tree regularizers (`reg_lambda = 0.1306`, `reg_alpha = 0.1225`, `num_leaves = 18`).
 
 ### E. Direct Multi-Horizon Forecasting (1h to 72h)
 Instead of relying solely on error-accumulating recursive rollouts, dedicated direct models were trained for horizons $h \in \{1, 6, 12, 24, 48, 72\}$ hours. Every single model outperforms the persistence baseline ("stays same as now").
@@ -158,7 +158,7 @@ All metrics below are evaluated on the **2024 held-out test set** (22,315 hourly
 
 ### 24-Hour Ahead Point Forecast Performance
 
-| Model Configuration | MAE ($\mu\text{g}/\text{m}^3$) | RMSE ($\mu\text{g}/\text{m}^3$) | $R^2$ Score | Notes |
+| Model Configuration | MAE (µg/m³) | RMSE (µg/m³) | R² Score | Notes |
 | :--- | :---: | :---: | :---: | :--- |
 | **Persistence Baseline** ($y_{t+24} \approx y_t$) | 33.52 | 57.93 | 0.342 | Naive standard baseline |
 | **LightGBM v1 (Baseline)** | 29.35 | 47.85 | 0.554 | 29 features |
@@ -166,11 +166,11 @@ All metrics below are evaluated on the **2024 held-out test set** (22,315 hourly
 | **LightGBM v3 (Expanded Features)** | 29.18 | 47.63 | 0.558 | 46 features |
 | **LightGBM v3 + Optuna Tuned** | **29.17** | **47.66** | **0.557** | **Best balanced model** |
 
-> **Net Performance Gain**: LightGBM reduces MAE by **$4.35\ \mu\text{g}/\text{m}^3$ (-13.0%)** and RMSE by **$10.27\ \mu\text{g}/\text{m}^3$ (-17.7%)** compared to persistence.
+> **Net Performance Gain**: LightGBM reduces MAE by **4.35 µg/m³ (-13.0%)** and RMSE by **10.27 µg/m³ (-17.7%)** compared to persistence.
 
 ### Per-Station Accuracy Breakdown (2024 Test Set)
 
-| Station Code | Station Name | Test Samples | MAE ($\mu\text{g}/\text{m}^3$) | RMSE ($\mu\text{g}/\text{m}^3$) | $R^2$ Score |
+| Station Code | Station Name | Test Samples | MAE (µg/m³) | RMSE (µg/m³) | R² Score |
 | :--- | :--- | :---: | :---: | :---: | :---: |
 | **CAMS-1** | Paribesh Bhaban (Agargaon) | 7,584 | 29.59 | 46.49 | 0.561 |
 | **CAMS-2** | Farmgate (BARC) | 7,893 | 23.94 | 37.56 | 0.569 |
@@ -178,7 +178,7 @@ All metrics below are evaluated on the **2024 held-out test set** (22,315 hourly
 
 ### Direct Multi-Horizon Forecast Horizon Accuracy
 
-| Horizon ($h$) | Model MAE ($\mu\text{g}/\text{m}^3$) | Persistence MAE ($\mu\text{g}/\text{m}^3$) | Improvement over Persistence |
+| Horizon ($h$) | Model MAE (µg/m³) | Persistence MAE (µg/m³) | Improvement over Persistence |
 | :---: | :---: | :---: | :---: |
 | **1 hour** | 14.15 | 15.34 | **+7.7%** |
 | **6 hours** | 25.83 | 35.11 | **+26.4%** |
@@ -189,7 +189,7 @@ All metrics below are evaluated on the **2024 held-out test set** (22,315 hourly
 
 ### Severe Episode Alerting Performance ($\text{PM}_{2.5} > 150\ \mu\text{g}/\text{m}^3$)
 
-| Strategy / Model | Recall (Catch Rate) | Precision | $F_1$-Score | False Alarms | PR-AUC |
+| Strategy / Model | Recall (Catch Rate) | Precision | F1-Score | False Alarms | PR-AUC |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | Random Guessing Baseline | 15.7% | 15.7% | 0.157 | — | 0.157 |
 | Point Regressor ($\hat{y} > 150$) | 60.5% | 61.8% | 0.612 | 1,307 | 0.646 |
@@ -205,7 +205,7 @@ All figures are generated directly from the experimental pipeline and stored in 
 | Time Series Forecast (2024 Test Set) | Predicted vs Actual Scatter Plot |
 | :---: | :---: |
 | ![Forecast](results/fig_forecast.png) | ![Scatter](results/fig_scatter.png) |
-| *Actual vs Predicted 24h PM2.5 tracking diurnal dynamics* | *$R^2 = 0.557$ alignment against ground truth* |
+| *Actual vs Predicted 24h PM2.5 tracking diurnal dynamics* | *R² = 0.557 alignment against ground truth* |
 
 | Multi-Horizon Performance (1h to 72h) | Feature Importance |
 | :---: | :---: |
