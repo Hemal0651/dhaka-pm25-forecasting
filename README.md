@@ -343,5 +343,7 @@ This project is open-source under the [MIT License](LICENSE).
 ### Acknowledgements
 We gratefully acknowledge the **Department of Environment (DoE)**, Ministry of Environment, Forest and Climate Change, Government of Bangladesh, and the World Bank **Clean Air and Sustainable Environment (CASE)** project for establishing and maintaining the CAMS network in Dhaka.
 
-### Author
+### Authors
 - **Hemal Fahim** ([GitHub: @Hemal0651](https://github.com/Hemal0651))
+- **Sheikh Mainul Islam** ([GitHub: @Sheikh-Mainul-Islam](https://github.com/Sheikh-Mainul-Islam))
+- **Tanjida Sultana Maria** ([GitHub: @tanjidaMaria](https://github.com/tanjidaMaria))
