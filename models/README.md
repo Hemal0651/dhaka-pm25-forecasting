@@ -17,9 +17,9 @@ This directory contains trained, production-ready LightGBM booster models serial
   - `colsample_bytree`: 0.8
   - `early_stopping_round`: 100
 - **Test Performance (2024 Held-out)**:
-  - MAE: $29.35\ \mu\text{g}/\text{m}^3$
-  - RMSE: $47.85\ \mu\text{g}/\text{m}^3$
-  - $R^2$: 0.554
+  - MAE: 29.35 µg/m³
+  - RMSE: 47.85 µg/m³
+  - R²: 0.554
 
 ### `pm25_lgbm_tuned.txt`
 - **Architecture**: Tuned Gradient Boosted Decision Trees via Optuna Bayesian Optimization (5-fold temporal expansion CV).
@@ -34,9 +34,9 @@ This directory contains trained, production-ready LightGBM booster models serial
   - `colsample_bytree`: 0.5283
   - `subsample`: 0.8424
 - **Test Performance (2024 Held-out)**:
-  - MAE: $29.17\ \mu\text{g}/\text{m}^3$
-  - RMSE: $47.66\ \mu\text{g}/\text{m}^3$
-  - $R^2$: 0.557
+  - MAE: 29.14 µg/m³ (29.17 on unaligned)
+  - RMSE: 47.62 µg/m³
+  - R²: 0.557
 
 ---
 

@@ -1,0 +1,7 @@
+horizon,n,model_MAE,persistence_MAE,seasonal_naive_MAE,climatology_MAE,best_baseline,best_baseline_MAE,impr_vs_persistence_pct,impr_vs_best_pct,ci95_lo,ci95_hi
+1,22263,14.062,15.225,33.491,33.345,Persistence,15.225,7.643,7.643,6.213,8.841
+6,22061,25.732,35.038,33.555,33.411,Hourly climatology,33.411,26.558,22.981,19.653,26.27
+12,22016,27.971,40.787,33.487,33.351,Hourly climatology,33.351,31.422,16.131,12.684,19.54
+24,22246,29.149,33.622,33.622,33.395,Hourly climatology,33.395,13.304,12.716,9.382,15.947
+48,21617,31.451,38.468,38.468,33.336,Hourly climatology,33.336,18.242,5.655,2.665,8.628
+72,21298,32.156,40.448,40.448,33.15,Hourly climatology,33.15,20.502,3.0,0.312,5.568
